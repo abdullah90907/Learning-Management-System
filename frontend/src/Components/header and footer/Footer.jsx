@@ -15,17 +15,17 @@ function Footer(){
         </div>
         <div className="footer-col">
           <h3>Intermediate Courses</h3>
-          <li>Web Development</li>
-          <li>Programming</li>
-          <li>Machine Learning</li>
-          <li>Project Fundamentals</li>
+          <li>OOP in Java</li>
+          <li>Web Development with MERN</li>
+          <li>Building RESTful APIs with Spring Boot</li>
+          <li>Git & Version Control with GitHub</li>
         </div>
         <div className="footer-col">
           <h3>Beginner Courses</h3>
-          <li>Web Development</li>
-          <li>Programming</li>
-          <li>Machine Learning</li>
-          <li>Project Fundamentals</li>
+          <li>Introduction to Programming with Python</li>
+          <li>Java Fundamentals for Beginners</li>
+          <li>HTML & CSS Basics</li>
+          <li>C++ Programming Essentials</li>
         </div>
         <div className="copyright">
           <p>Copyright ©2025 All rights reserved .</p>

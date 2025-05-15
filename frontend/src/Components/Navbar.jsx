@@ -87,7 +87,7 @@ function Navbar(props) {
               </li>
             ) : (
               <li>
-                <Link to={"/courses"}>Chat With AI</Link>
+                <Link to={"/chatbot"}>Chat With AI</Link>
               </li>
             )}
             {authToken ? (

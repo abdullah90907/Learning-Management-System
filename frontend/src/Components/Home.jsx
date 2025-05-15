@@ -27,6 +27,15 @@ import Footer from "./header and footer/Footer";
 function Home() {
   const navigate = useNavigate();
   const authToken = localStorage.getItem("token");
+    // Define courses without IDs
+  const courses = [
+    { img: c1, title: "JavaScript Beginner Course", imageAlt: "JavaScript Course" },
+    { img: c2, title: "HTML Complete Course", imageAlt: "HTML Course" },
+    { img: c3, title: "SQL Beginner Course", imageAlt: "SQL Course" },
+    { img: c4, title: "Python Master Course", imageAlt: "Python Course" },
+    { img: c5, title: "Java Essentials", imageAlt: "Java Course" },
+    { img: c6, title: "CSS Complete Course", imageAlt: "CSS Course" },
+  ];
   return (
     <div>
       <Navbar page={"home"} />
@@ -40,10 +49,10 @@ function Home() {
             lessons that can include videos, text notes, and assessment tests.
           </p>
           <div className="btn">
-            <a className="blue" href="#">
+            <a className="blue" href="http://localhost:3000/login">
               Learn More
             </a>
-            <a className="yellow" href="#">
+            <a className="yellow" href="http://localhost:3000/courses">
               Visit Courses
             </a>
           </div>
@@ -79,22 +88,25 @@ function Home() {
           <h1>Our Popular Courses</h1>
           <p>10,000+ enrolled</p>
           <div className="course-box">
-            {/* ... (Course content here) */}
-            <div className="courses">
-              <img src={c1} alt="" />
-              <div className="details">
-                <p>Updated 12/08/23</p>
-                <h6>JavaScript Beginner Course</h6>
-                <div className="star">
-                  {[...Array(5)].map((_, index) => (
-                    <FontAwesomeIcon key={index} icon={faStar} className="i" />
-                  ))}
-                  <p>(239)</p>
+            {courses.map((course, index) => (
+              <Link key={index} to="/courses" style={{ textDecoration: 'none' }}>
+                <div className="courses">
+                  <img src={course.img} alt={course.imageAlt} />
+                  <div className="details">
+                    <p>Updated 12/08/23</p>
+                    <h6>{course.title}</h6>
+                    <div className="star">
+                      {[...Array(5)].map((_, i) => (
+                        <FontAwesomeIcon key={i} icon={faStar} className="i" />
+                      ))}
+                      <p>(239)</p>
+                    </div>
+                  </div>
+                  <div className="cost">$49.99</div>
                 </div>
-              </div>
-              <div className="cost">$49.99</div>
-            </div>
-            <div className="courses">
+              </Link>
+            ))}
+            {/* <div className="courses">
               <img src={c2} alt="" />
               <div className="details">
                 <p>Updated 12/08/23</p>
@@ -163,7 +175,7 @@ function Home() {
                 </div>
               </div>
               <div className="cost">$49.99</div>
-            </div>
+            </div> */}
           </div>
         </section>
         <section id="registration">
